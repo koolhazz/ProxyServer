@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<SYSTEM>
+<Node>
+	<ServerList><!--每个场启动一个server先-->
+		<Server svid="1" level="1" ip="192.168.100.141" port="2111"/> 
+		<Server svid="2" level="2" ip="192.168.100.141" port="2112"/>
+		<Server svid="3" level="3" ip="192.168.100.141" port="2113"/>
+		<Server svid="4" level="4" ip="192.168.100.141" port="2114"/>
+		<Server svid="5" level="5" ip="192.168.100.141" port="2115"/>
+		<Server svid="6" level="6" ip="192.168.100.141" port="2116"/>
+		<Server svid="7" level="7" ip="192.168.100.141" port="2117"/>
+		<Server svid="8" level="8" ip="192.168.100.141" port="2118"/>
+		<Server svid="9" level="9" ip="192.168.100.141" port="2119"/>
+		<Server svid="10" level="10" ip="192.168.100.141" port="2120"/>
+		<Server svid="11" level="11" ip="192.168.100.141" port="2121"/>
+		<Server svid="12" level="12" ip="192.168.100.141" port="2122"/>
+	</ServerList>
+	<CmdList>
+		<Cmd value="257"/><!--0x0101-->
+		<Cmd value="785"/><!--0x0311-->
+		<Cmd value="275"/><!--0x0113-->
+		<Cmd value="1540"/><!--0x0604-->
+		<Cmd value="276"/><!--0x0114-->
+		<Cmd value="269"/><!--0x010D-->
+		<Cmd value="277"/><!--0x0115-->
+		<Cmd value="279"/><!--0x0117-->
+		<Cmd value="288"/><!--0x0120-->
+		<Cmd value="270"/><!--0x010E-->
+		<Cmd value="289"/><!--0x0121-->
+		<Cmd value="290"/><!--0x0122-->
+		<Cmd value="292"/><!--0x0124-->
+		<Cmd value="285"/><!--0x011D-->
+		<Cmd value="293"/><!--0x0125-->
+		<Cmd value="286"/><!--0x011e-->
+        <Cmd value="308"/><!---->
+        <Cmd value="309"/><!---->
+        <Cmd value="310"/><!---->
+        <Cmd value="311"/><!---->
+        <Cmd value="28752"/><!---->
+        <Cmd value="28756"/><!---->
+        <Cmd value="28757"/><!---->
+	</CmdList>
+</Node>
+<IPMap>
+        <IP eth0="58.83.135.37" eth1="192.168.1.137"/>
+        <IP eth0="192.168.1.137" eth1="192.168.1.137"/>
+        <IP eth0="192.168.100.141" eth1="192.168.100.141"/>
+        <IP eth0="192.168.100.167" eth1="192.168.100.167"/>
+</IPMap>
+<WhiteCmdList>
+	<UidList uids="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"/>
+</WhiteCmdList>
+
+</SYSTEM>

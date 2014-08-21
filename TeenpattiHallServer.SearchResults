@@ -1,0 +1,3 @@
+---- TGlobal::_addr Matches (2 in 2 files) ----
+Global.cpp (src\proxy):char            TGlobal::_addr[64]               = "0.0.0.0";  
+Incoming.cpp (src\proxy):    NEW (CListener(TGlobal::_addr, TGlobal::_port, MAX_ACCEPT_COUNT), _listener);
