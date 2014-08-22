@@ -294,7 +294,7 @@ void CPollerUnit::ProcessPollerEvents(void)
 		}
 
 		CEpollSlot *s = &pollerTable[EPOLL_DATA_SLOT(ep_events+i)];
-		CPollerObject *p = s->poller;
+		CPollerObject *p = s->poller; // clientunit gameunit helpunit
 
 		p->newEvents = p->oldEvents;
 

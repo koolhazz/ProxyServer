@@ -1,3 +1,17 @@
----- TGlobal::_addr Matches (2 in 2 files) ----
-Global.cpp (src\proxy):char            TGlobal::_addr[64]               = "0.0.0.0";  
-Incoming.cpp (src\proxy):    NEW (CListener(TGlobal::_addr, TGlobal::_port, MAX_ACCEPT_COUNT), _listener);
+---- m_objmap Matches (16 in 5 files) ----
+CHelper_pool.h (src\proxy):	map<int, CDecoderUnit*> m_objmap;
+Client_unit.cpp (src\proxy):		map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.begin();
+Client_unit.cpp (src\proxy):		for(; iter!=_helperpool->m_objmap.end(); iter++)		
+Client_unit.cpp (src\proxy):		map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.begin();
+Client_unit.cpp (src\proxy):		for(; iter!=_helperpool->m_objmap.end(); iter++)		
+Client_unit.cpp (src\proxy):				map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(uid);
+Client_unit.cpp (src\proxy):				if(iter != _helperpool->m_objmap.end())
+Client_unit.cpp (src\proxy):				_helperpool->m_objmap[uid] = _decoderunit;
+Client_unit.cpp (src\proxy):	int allUserCount = _helperpool->m_objmap.size();
+Decode_unit.cpp (src\proxy):		std::map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(_flag);
+Decode_unit.cpp (src\proxy):		if(iter != _helperpool->m_objmap.end())
+Decode_unit.cpp (src\proxy):			_helperpool->m_objmap.erase(iter);
+Decode_unit.cpp (src\proxy):	log_debug("delete object from map, length[%d]", (int)_helperpool->m_objmap.size());	
+Helper_unit.cpp (src\proxy):	std::map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(uid);
+Helper_unit.cpp (src\proxy):	if( iter != _helperpool->m_objmap.end())
+RealTimer.cpp (src\proxy):		LogFile->writeHallUserCount((int)_helperpool->m_objmap.size(), TGlobal::_ip, TGlobal::_port);

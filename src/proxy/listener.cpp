@@ -70,7 +70,7 @@ int CListener::Attach (CPollerUnit* unit,
                        CTimerList* helpertimerlist,
                        int blog)
 {
-	if((netfd = CNet::tcp_bind(_bindAddr, _bindPort, blog)) == -1)
+	if((netfd = CNet::tcp_bind(_bindAddr, _bindPort, blog)) == -1) // ´´½¨ socket
 	{
 		log_error ("bind addr[%s], port[%d] failed.", _bindAddr, _bindPort);
         return -1;

@@ -207,7 +207,7 @@ int CClientUnit::send (void)
 	return -1;
 }
 
-int CClientUnit::InputNotify (void)
+int CClientUnit::InputNotify (void) // 读事件处理
 {
     update_timer();
     recv();
@@ -336,7 +336,7 @@ int CClientUnit::HandleInput(const char* data,  int len)
 		return 0;
 	}
 	
-	TPkgHeader *pHeader = (struct TPkgHeader*)data;
+	TPkgHeader *pHeader = (struct TPkgHeader*)data; // 这里判断数据包的合法性
 	if(pHeader->flag[0]!='B' || pHeader->flag[1]!='Y')
 	{
 		g_pErrorLog->logMsg("%s||Invalid packet, uid:[%d]", __FUNCTION__, _uid);
@@ -752,7 +752,7 @@ int CClientUnit::HandleInputBuf(const char *pData, int len)
 				_decoderunit->set_conn_type(CONN_CLINET);
 				_uid = uid;
 				_api = api;
-				_helperpool->m_objmap[uid] = _decoderunit;
+				_helperpool->m_objmap[uid] = _decoderunit; // 这里设置了 uid 与unit的关联
 
 				if(TGlobal::_debugLogSwitch && _uid>0)
 				{
