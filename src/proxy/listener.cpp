@@ -105,7 +105,7 @@ int CListener::proc_request (struct sockaddr_in* peer)
 		pDecoderunit->set_ip(peer[i].sin_addr.s_addr);
 		log_debug("client ip=%s", inet_ntoa(peer[i].sin_addr));
 			
-        if(pDecoderunit->listener_input() < 0) // init clientunit gameunit
+        if(pDecoderunit->listener_input() < 0) // init clientunit gameunit ´´½¨clientunit
         {
             ::close(_fd_array[i]);
             _fd_array[i] = -1;

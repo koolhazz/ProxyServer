@@ -704,7 +704,8 @@ int CClientUnit::HandleInputBuf(const char *pData, int len)
 					g_pErrorLog->logMsg("%s||Invalid Client, cmd:[0x%x], uid:[%d], ip:[%s], api:[%hd]", __FUNCTION__, cmd, uid, ip.c_str(),api);
 					return -1;
 				}
-				
+
+				/* 这里判断是否重复登录 如果可以找到对应的clientunit说明已经登录  */
 				map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(uid);
 				if(iter != _helperpool->m_objmap.end())
 				{
@@ -715,7 +716,7 @@ int CClientUnit::HandleInputBuf(const char *pData, int len)
 						resPacket.Begin(SERVER_CMD_KICK_OUT);
 						resPacket.End();
 						encryptdecrypt.EncryptBuffer(&resPacket);
-						CClientUnit *pClientUnit = pDecoderUnit->get_web_unit();
+						CClientUnit *pClientUnit = pDecoderUnit->get_web_unit(); /* 这里关联出clientunit */
 						if(pClientUnit != NULL)
 						{
 							pClientUnit->add_rsp_buf(resPacket.packet_buf(), resPacket.packet_size());
