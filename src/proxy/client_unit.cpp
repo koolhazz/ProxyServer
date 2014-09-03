@@ -325,7 +325,7 @@ TDecodeStatus CClientUnit::proc_pkg () // recv
 	return _decodeStatus;
 }
 
-int CClientUnit::HandleInput(const char* data,  int len)
+int CClientUnit::HandleInput(const char* data,  int len) // 返回> 0 表示校验成功
 {
 	int headLen = sizeof(struct TPkgHeader);
 	g_pDebugLog->logMsg("ffffffffffff  [%d]",headLen);  
@@ -343,7 +343,7 @@ int CClientUnit::HandleInput(const char* data,  int len)
 		return -1;
 	}
 	
-	int pkglen = sizeof(short) + ntohs(pHeader->length);//脳陋禄禄鲁脡麓贸露脣
+	int pkglen = sizeof(short) + ntohs(pHeader->length);// 获取当前数据包的长度
 	g_pErrorLog->logMsg("client packet body length:[%d], cmd:[%d]", ntohs(pHeader->length), ntohs(pHeader->cmd));
 	if(pkglen<0 || pkglen>8*1000)
 	{

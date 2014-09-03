@@ -16,14 +16,14 @@ public:
 	~CHelperPool();
 
 public:
-	map<int, CHelperUnit*> m_helpermap;			//svid对应AllocServer
-	vector<int> m_svidlist;
-	map<int, CDecoderUnit*> m_objmap;
-	vector<int> m_cmdlist;
-	map<int, std::vector<int> > m_levelmap;		//level对应svid
-	map<string, string> m_ipmap;
-	map<short, int> m_LevelCountMap;			//level---count 每个等级场的人数
-	vector<int> m_whitelist;            		//容错命令白名单
+	map<int, CHelperUnit*> 			m_helpermap;			//svid对应AllocServer
+	vector<int> 					m_svidlist;
+	map<int, CDecoderUnit*> 		m_objmap;
+	vector<int> 					m_cmdlist;
+	map<int, std::vector<int> > 	m_levelmap;		//level对应svid
+	map<string, string> 			m_ipmap;
+	map<short, int> 				m_LevelCountMap;			//level---count 每个等级场的人数
+	vector<int> 					m_whitelist;            		//容错命令白名单
 };
 
 HTTP_SVR_NS_END

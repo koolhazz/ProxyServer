@@ -66,7 +66,7 @@ string CHelperUnit::IpMap(string& ip)
 int CHelperUnit::send_to_logic (CTimerList* lst)
 {
 	_helperTimer = lst;
-	EnableInput ();
+	EnableInput (); // 这里关注EPOLLIN,也就是发送后端数据的时候才关注
 	if (connect() < 0)
 	{
 		reset_helper();

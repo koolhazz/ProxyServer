@@ -1,17 +1,8 @@
----- m_objmap Matches (16 in 5 files) ----
-CHelper_pool.h (src\proxy):	map<int, CDecoderUnit*> m_objmap;
-Client_unit.cpp (src\proxy):		map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.begin();
-Client_unit.cpp (src\proxy):		for(; iter!=_helperpool->m_objmap.end(); iter++)		
-Client_unit.cpp (src\proxy):		map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.begin();
-Client_unit.cpp (src\proxy):		for(; iter!=_helperpool->m_objmap.end(); iter++)		
-Client_unit.cpp (src\proxy):				map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(uid);
-Client_unit.cpp (src\proxy):				if(iter != _helperpool->m_objmap.end())
-Client_unit.cpp (src\proxy):				_helperpool->m_objmap[uid] = _decoderunit; // 这里设置了 uid 与unit的关联
-Client_unit.cpp (src\proxy):	int allUserCount = _helperpool->m_objmap.size();
-Decode_unit.cpp (src\proxy):		std::map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(_flag);
-Decode_unit.cpp (src\proxy):		if(iter != _helperpool->m_objmap.end())
-Decode_unit.cpp (src\proxy):			_helperpool->m_objmap.erase(iter);
-Decode_unit.cpp (src\proxy):	log_debug("delete object from map, length[%d]", (int)_helperpool->m_objmap.size());	
-Helper_unit.cpp (src\proxy):	std::map<int, CDecoderUnit*>::iterator iter = _helperpool->m_objmap.find(uid);
-Helper_unit.cpp (src\proxy):	if( iter != _helperpool->m_objmap.end())
-RealTimer.cpp (src\proxy):		LogFile->writeHallUserCount((int)_helperpool->m_objmap.size(), TGlobal::_ip, TGlobal::_port);
+---- unuse Matches (7 in 3 files) ----
+HashMapImp.hpp (src\include):        //the bucket change to unused
+HashMapImp.hpp (src\include):        //the bucket change from unused
+Hiredis.h (src\include):#define REDIS_READER_MAX_BUF (1024*16)  /* Default max unused reader buffer. */
+Hiredis.h (src\include):    size_t maxbuf; /* Max length of unused buffer */
+MarkupSTL.cpp (src\core):	// This returns the index of the next unused ElemPos in the array
+MarkupSTL.cpp (src\core):	// This decrements the index of the next unused ElemPos in the array
+MarkupSTL.cpp (src\core):	// In all cases we need to get a new ElemPos, but release it if unused
