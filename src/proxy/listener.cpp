@@ -84,7 +84,7 @@ int CListener::Attach (CPollerUnit* unit,
 
 int CListener::proc_request (struct sockaddr_in* peer)
 {
-    for (int i = 0; i < _newfd_cnt; ++i)
+    for (int i = 0; i < _newfd_cnt; ++i) 
     {
         if (_fd_array[i] == -1)
         {

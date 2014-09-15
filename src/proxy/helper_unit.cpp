@@ -302,7 +302,7 @@ int CHelperUnit::ProcessUserLoginSuccess(CDecoderUnit* pDecoder, NETInputPacket*
 		string ip = pPacket->ReadString();
 		int port = pPacket->ReadInt();
 		CGameUnit *pGameUnit = pDecoder->get_game_unit();
-		if(pGameUnit != NULL)
+		if(pGameUnit != NULL) /* 这里记录allocserver 返回的GameServer的地址? 应该是Alloc的地址? */
 		{
 			pGameUnit->addr = IpMap(ip);
 			pGameUnit->port = port;
@@ -458,18 +458,18 @@ int CHelperUnit::process_pkg(void)
 					
 					if(cmd == SERVER_CMD_LOGIN_SUCCESS)
 					{	
-						ProcessUserLoginSuccess(_decoder, &tempPacket);
+						ProcessUserLoginSuccess(_decoder, &tempPacket); /* 这里记录AllocServer 与 Client 关联 */
 					}
 					else if(cmd == SERVER_CMD_ENTER_ROOM)
 					{
-						ProcessEnterRoom(_decoder, &tempPacket);
+						ProcessEnterRoom(_decoder, &tempPacket); /* 这里记录AllocServer 与 Client 关联 */
 					}
 					else if(cmd == CMD_GET_NEW_ROOM)
 					{
-						ProcessGetNewRoom(_decoder, &tempPacket);
+						ProcessGetNewRoom(_decoder, &tempPacket); /* 这里记录AllocServer 与 Client 关联 */
 					}
 
-					if(clt->get_state() != CONN_FATAL_ERROR)
+					if(clt->get_state() != CONN_FATAL_ERROR) /* 这里协议包返回给client端 */
 					{
 						clt->add_rsp_buf(szTemp, rLen);
 						clt->send();

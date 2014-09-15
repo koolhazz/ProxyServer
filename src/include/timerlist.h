@@ -23,7 +23,7 @@ public:
 
 class CTimerUnit {
 private:
-	CTimerList pending;
+	CTimerList pending; /* 即将到期的定时器，具体说应该就是超时为0的定时器 */
 	CTimerList *next;
 public:
 	friend class CTimerObject;

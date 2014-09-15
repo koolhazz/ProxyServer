@@ -1,8 +1,3 @@
----- unuse Matches (7 in 3 files) ----
-HashMapImp.hpp (src\include):        //the bucket change to unused
-HashMapImp.hpp (src\include):        //the bucket change from unused
-Hiredis.h (src\include):#define REDIS_READER_MAX_BUF (1024*16)  /* Default max unused reader buffer. */
-Hiredis.h (src\include):    size_t maxbuf; /* Max length of unused buffer */
-MarkupSTL.cpp (src\core):	// This returns the index of the next unused ElemPos in the array
-MarkupSTL.cpp (src\core):	// This decrements the index of the next unused ElemPos in the array
-MarkupSTL.cpp (src\core):	// In all cases we need to get a new ElemPos, but release it if unused
+---- SERVER_COMMAND_BREAK_TIME Matches (2 in 2 files) ----
+Client_unit.cpp (src\proxy):		resPacket.Begin(SERVER_COMMAND_BREAK_TIME);
+Defs.h (src\proxy):const int SERVER_COMMAND_BREAK_TIME = 0x2017;//·µ»ØÐÄÌø

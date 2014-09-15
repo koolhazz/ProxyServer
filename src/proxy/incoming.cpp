@@ -324,7 +324,7 @@ int CIncoming::run (void)
         _pollerunit->WaitPollerEvents (_timerunit->ExpireMicroSeconds(_epwaittimeout));
         uint64_t now = GET_TIMESTAMP();
         _pollerunit->ProcessPollerEvents(); // 处理事件
-        _timerunit->CheckExpired (now);
+        _timerunit->CheckExpired (now); /*  处理定时器 */
         _timerunit->CheckPending ();
     }
 
