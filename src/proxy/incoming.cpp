@@ -215,7 +215,7 @@ int CIncoming::InitHelperUnit() // called by CIncoming::open()  ³õÊ¼»¯ server.xm
 			pHelperUnit->addr = ip;
 			pHelperUnit->port = port;
 
-			vector<int>& v = _helperpool->m_levelmap[level];
+			vector<int>& v = _helperpool->m_levelmap[level]; /* Ìí¼Ólevel */
 			v.push_back(svid);
 			log_boot("alloc server id:[%d], level:[%d], ip:[%s], port:[%d]", svid, level, ip.c_str(), port);
 		}
