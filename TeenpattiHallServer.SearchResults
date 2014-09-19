@@ -1,3 +1,6 @@
----- SERVER_COMMAND_BREAK_TIME Matches (2 in 2 files) ----
-Client_unit.cpp (src\proxy):		resPacket.Begin(SERVER_COMMAND_BREAK_TIME);
-Defs.h (src\proxy):const int SERVER_COMMAND_BREAK_TIME = 0x2017;//·µ»ØÐÄÌø
+---- WhiteCmdList Matches (5 in 2 files) ----
+Incoming.cpp (src\proxy):	if(!markup.FindElem("WhiteCmdList"))
+Incoming.cpp (src\proxy):		log_boot ("FindElem [WhiteCmdList] failed.");     
+Incoming.cpp (src\proxy):		log_boot ("IntoElem [WhiteCmdList] failed.");       
+Server.xml (conf):<WhiteCmdList>
+Server.xml (conf):</WhiteCmdList>

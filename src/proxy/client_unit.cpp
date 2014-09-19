@@ -491,7 +491,7 @@ int CClientUnit::HandleInputBuf(const char *pData, int len)
 			pGameUnit->append_pkg(pData, len);
 			SendIPSetPacket(pGameUnit, reqPacket, cmd);
 				
-			if(pGameUnit->send_to_logic(_decoderunit->get_helper_timer()) < 0)
+			if(pGameUnit->send_to_logic(_decoderunit->get_helper_timer()) < 0) // 游戏服务器发送指令，针对已经在游戏服务器登录的玩家
 			{ 
 				g_pErrorLog->logMsg("%s||Send to GameServer failed, cmd:[0x%x], uid:[%d], api:[%d], ip:[%s], port:[%d]", 
 					__FUNCTION__, cmd, _uid, _api, pGameUnit->addr.c_str(), pGameUnit->port);

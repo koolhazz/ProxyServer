@@ -328,7 +328,7 @@ int CHelperUnit::ProcessEnterRoom(CDecoderUnit* pDecoder, NETInputPacket* pPacke
 
 	if(res)
 	{
-		string ip = pPacket->ReadString();
+		string ip = pPacket->ReadString(); /* 返回游戏server的地址 */
 		int port = pPacket->ReadInt();
 		int tid = pPacket->ReadInt();
 		g_pErrorLog->logMsg(" ProcessEnterRoom tid:[%d], ip:[%s], port:[%d]",tid, ip.c_str(),port);
@@ -340,7 +340,7 @@ int CHelperUnit::ProcessEnterRoom(CDecoderUnit* pDecoder, NETInputPacket* pPacke
 			{
 				pGameUnit->reset_helper();
 			}
-			pGameUnit->addr = IpMap(ip);
+			pGameUnit->addr = IpMap(ip); // 这里记录游戏server的地址
 			pGameUnit->port = port;
 			pGameUnit->tid = tid;	
 
