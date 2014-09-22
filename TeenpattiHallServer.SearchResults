@@ -1,6 +1,2 @@
----- WhiteCmdList Matches (5 in 2 files) ----
-Incoming.cpp (src\proxy):	if(!markup.FindElem("WhiteCmdList"))
-Incoming.cpp (src\proxy):		log_boot ("FindElem [WhiteCmdList] failed.");     
-Incoming.cpp (src\proxy):		log_boot ("IntoElem [WhiteCmdList] failed.");       
-Server.xml (conf):<WhiteCmdList>
-Server.xml (conf):</WhiteCmdList>
+---- AttachZeroTimer Matches (1 in 1 files) ----
+Timerlist.h (src\include):	void AttachZeroTimer(class CTimerUnit *o) { ListMoveTail(o->pending.tlist); }

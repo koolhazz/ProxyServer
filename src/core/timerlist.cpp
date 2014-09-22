@@ -40,7 +40,8 @@ int CTimerList::CheckExpired(int64_t now)
 	return n;
 }
 
-CTimerList *CTimerUnit::GetTimerList(int to)
+CTimerList*
+CTimerUnit::GetTimerList(int to)
 {
 	CTimerList *tl;
 
