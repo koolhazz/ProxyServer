@@ -19,7 +19,7 @@ void CTimerObject::AttachTimer(class CTimerList *lst)
 {
 	if(lst->timeout > 0)
 		objexp = GET_TIMESTAMP() + lst->timeout * TIMESTAMP_PRECISION;
-	ListMoveTail(lst->tlist);
+	ListMoveTail(lst->tlist); // 将本对象添加到timerlist的列表尾部
 }
 
 int CTimerList::CheckExpired(int64_t now) 

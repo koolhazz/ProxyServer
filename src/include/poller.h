@@ -80,7 +80,7 @@ protected:
 	CPollerUnit *ownerUnit;
 	int newEvents;
 	int oldEvents;
-	struct CEpollSlot *epslot;
+	struct CEpollSlot *epslot; // poniter to epslot
 };
 
 class CPollerUnit 

@@ -244,6 +244,7 @@ static inline void list_splice_init(struct list_head *list,
 
 
 __END_DECLS
+
 #ifdef __cplusplus
 
 class CListHead {

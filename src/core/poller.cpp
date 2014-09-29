@@ -51,7 +51,7 @@ int CPollerObject::AttachPoller (CPollerUnit *unit)
 		return -1;
 	if(epslot==NULL)
     {
-		if (!(epslot = ownerUnit->AllocEpollSlot ()))
+		if (!(epslot = ownerUnit->AllocEpollSlot ())) // alloc epslot
         {
 			return -1;
         }
@@ -192,8 +192,10 @@ int CPollerUnit::SetMaxPollers(int mp)
 	return 0;
 }
 
-int CPollerUnit::InitializePollerUnit(void) //called by CIncoming::open
+int 
+CPollerUnit::InitializePollerUnit(void) //called by CIncoming::open
 {
+	// alloc 
 	pollerTable = (struct CEpollSlot *)CALLOC(maxPollers, sizeof (*pollerTable));
 
 	if (!pollerTable)
@@ -204,7 +206,7 @@ int CPollerUnit::InitializePollerUnit(void) //called by CIncoming::open
 
 	for (int i = 0; i < maxPollers - 1; i++)
 	{
-		pollerTable[i].freeList = &pollerTable[i+1];
+		pollerTable[i].freeList = &pollerTable[i+1]; // (pollerTable + i)->freeList = pollerTable + i + 1
 	}
 
 	pollerTable[maxPollers - 1].freeList = NULL;
@@ -247,12 +249,12 @@ void CPollerUnit::FreeEpollSlot (CEpollSlot *p)
 	p->seq++;
 }
 
-struct CEpollSlot *CPollerUnit::AllocEpollSlot ()
+struct CEpollSlot*
+CPollerUnit::AllocEpollSlot ()
 {
 	CEpollSlot *p = freeSlotList;
 
-	if (0 == p) 
-	{
+	if (0 == p) {
 		log_warning("no free epoll slot, usedPollers=%d", usedPollers);
 		return NULL;
 	}
