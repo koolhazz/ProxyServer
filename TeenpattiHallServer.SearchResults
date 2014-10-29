@@ -1,2 +1,102 @@
----- AttachZeroTimer Matches (1 in 1 files) ----
-Timerlist.h (src\include):	void AttachZeroTimer(class CTimerUnit *o) { ListMoveTail(o->pending.tlist); }
+---- TGlobal Matches (111 in 9 files) ----
+Client_unit.cpp (src\proxy):	if(TGlobal::_debugLogSwitch && _uid>0)
+Client_unit.cpp (src\proxy):		if(key != TGlobal::_key)
+Client_unit.cpp (src\proxy):			g_pErrorLog->logMsg("%s||Invalid key, key:[%s], TGlobalKey:[%s]", __FUNCTION__, key.c_str(), TGlobal::_key.c_str());
+Client_unit.cpp (src\proxy):			if(pGameUnit->tid==0 && TGlobal::InWhiteList(_helperpool->m_whitelist, cmd))
+Client_unit.cpp (src\proxy):				log_error("HandleInputBuf||Reload config failed, svid:[%d]", TGlobal::_svid);
+Client_unit.cpp (src\proxy):				log_error("HandleInputBuf||Reload config success, svid:[%d]", TGlobal::_svid);
+Client_unit.cpp (src\proxy):				log_error("HandleInputBuf||Reload ip map failed, svid:[%d]", TGlobal::_svid);
+Client_unit.cpp (src\proxy):				log_error("HandleInputBuf||Reload ip map success, svid:[%d]", TGlobal::_svid);
+Client_unit.cpp (src\proxy):			TGlobal::_timerConnect = timeout;
+Client_unit.cpp (src\proxy):			log_error("HandleInputBuf||Reset Connect timer success, svid:[%d], timer[%d]", TGlobal::_svid, TGlobal::_timerConnect);
+Client_unit.cpp (src\proxy):					int svid = TGlobal::RandomSvid(v);
+Client_unit.cpp (src\proxy):					int svid = TGlobal::RandomSvid(v);
+Client_unit.cpp (src\proxy):				if(TGlobal::_debugLogSwitch && _uid>0)
+Client_unit.cpp (src\proxy):				int svid = TGlobal::LoopSvid(_helperpool->m_svidlist);
+Client_unit.cpp (src\proxy):			transPacket.WriteInt(TGlobal::_svid);//鏍囧織鍝釜server鍙戠殑
+Client_unit.cpp (src\proxy):			int svid = TGlobal::RandomSvid(v);
+Client_unit.cpp (src\proxy):	transPacket.WriteInt(TGlobal::_svid);
+Client_unit.cpp (src\proxy):	if(TGlobal::_debugLogSwitch && _uid>0)
+Client_unit.cpp (src\proxy):	int tempSid = TGlobal::_svid;
+Client_unit.cpp (src\proxy):	if(TGlobal::_debugLogSwitch && _uid>0)
+Client_unit.cpp (src\proxy):	TGlobal::_debugLogSwitch = pPacket->ReadInt();
+Client_unit.cpp (src\proxy):	log_error("%s|_debugLogSwitch:[%d]", __FUNCTION__, TGlobal::_debugLogSwitch);
+Decode_unit.cpp (src\proxy):	packet.WriteInt(TGlobal::_svid);
+Decode_unit.cpp (src\proxy):	if(TGlobal::_udpSwitch)
+Decode_unit.cpp (src\proxy):		LogFile->writeUserLeaveHall(_flag, TGlobal::_ip, TGlobal::_port);
+Decode_unit.cpp (src\proxy):        svid = TGlobal::LoopSvid(_helperpool->m_svidlist);
+Game_unit.cpp (src\proxy):	ret = CNet::tcp_connect(&netfd, addr.c_str(), port, 0, TGlobal::_timerConnect);
+Game_unit.cpp (src\proxy):		ret = CNet::tcp_connect(&netfd, addr.c_str(), port, 0, TGlobal::_timerConnect);
+Game_unit.cpp (src\proxy):			ret = CNet::tcp_connect(&netfd,addr.c_str(), port, 0, TGlobal::_timerConnect);
+Game_unit.cpp (src\proxy):			if(TGlobal::_debugLogSwitch && clt->get_uid()>0)
+Global.cpp (src\proxy):volatile int*   TGlobal::_module_close           = NULL;
+Global.cpp (src\proxy):volatile int    TGlobal::_stopped                = 0;
+Global.cpp (src\proxy):int             TGlobal::_accesslog              = 0;
+Global.cpp (src\proxy):const char*     TGlobal::_progname               = "hall";
+Global.cpp (src\proxy):const char*     TGlobal::_version                = "svr 2.0";
+Global.cpp (src\proxy):string          TGlobal::_config_file;
+Global.cpp (src\proxy):char            TGlobal::_addr[64]               = "0.0.0.0";  
+Global.cpp (src\proxy):uint16_t        TGlobal::_port                   = 80;  
+Global.cpp (src\proxy):int             TGlobal::_backlog                = 256;
+Global.cpp (src\proxy):int             TGlobal::_maxpoller              = 1024;
+Global.cpp (src\proxy):int             TGlobal::_webtimeout             = 10;
+Global.cpp (src\proxy):int             TGlobal::_helpertimeout          = 5;
+Global.cpp (src\proxy):int             TGlobal::_svid                   = 0;
+Global.cpp (src\proxy):string			TGlobal::_key                    = "";
+Global.cpp (src\proxy):string          TGlobal::_redisIp                = "0.0.0.0";
+Global.cpp (src\proxy):int             TGlobal::_redisPort              = 0;
+Global.cpp (src\proxy):int             TGlobal::_randCount              = 0;
+Global.cpp (src\proxy):string			TGlobal::_udpIp					 = "0.0.0.0";
+Global.cpp (src\proxy):int				TGlobal::_udpPort				 = 0;
+Global.cpp (src\proxy):string			TGlobal::_ip					 = "0.0.0.0";
+Global.cpp (src\proxy):int				TGlobal::_timerConnect			 = 500;	//connect超时时间
+Global.cpp (src\proxy):int             TGlobal::_loopNum                = 0;
+Global.cpp (src\proxy):int 			TGlobal::_udpSwitch              = 0;
+Global.cpp (src\proxy):int             TGlobal::_debugLogSwitch         = 0;              
+Global.cpp (src\proxy):void TGlobal::ShowVersion ()
+Global.cpp (src\proxy):void TGlobal::ShowUsage ()
+Global.cpp (src\proxy):int TGlobal::DaemonInit (const char* conf_file)
+Global.cpp (src\proxy):    TGlobal::_key = markup.GetAttrib("KEY");
+Global.cpp (src\proxy):int TGlobal::split_str(const char* ps_str , char* ps_sp , vector<std::string> &v_ret)
+Global.cpp (src\proxy):string TGlobal::binary2char(char c) 
+Global.cpp (src\proxy):int TGlobal::RandomSvid(vector<int>& v)
+Global.cpp (src\proxy):	if(TGlobal::_randCount > 100000000)
+Global.cpp (src\proxy):		TGlobal::_randCount = 0;
+Global.cpp (src\proxy):bool TGlobal::InWhiteList(vector<int>& v, int value)
+Global.cpp (src\proxy):int TGlobal::LoopSvid(vector<int>& v)
+Global.cpp (src\proxy):void TGlobal::DaemonStart(void)
+Global.h (src\proxy):class TGlobal
+Global.h (src\proxy):    TGlobal (void);
+Global.h (src\proxy):    ~TGlobal (void);
+Global.h (src\proxy):    TGlobal (const TGlobal&);
+Global.h (src\proxy):    const TGlobal& operator= (const TGlobal&);
+Helper_unit.cpp (src\proxy):	ret = CNet::tcp_connect(&netfd, addr.c_str(), port, 0, TGlobal::_timerConnect);
+Helper_unit.cpp (src\proxy):		ret = CNet::tcp_connect(&netfd, addr.c_str(), port, 0, TGlobal::_timerConnect);
+Helper_unit.cpp (src\proxy):			ret = CNet::tcp_connect(&netfd,addr.c_str(), port, 0, TGlobal::_timerConnect);
+Helper_unit.cpp (src\proxy):					if(TGlobal::_debugLogSwitch && clt->get_uid()>0)
+Helper_unit.cpp (src\proxy):	transPacket.WriteInt(TGlobal::_svid);
+Helper_unit.cpp (src\proxy):		int svid = TGlobal::LoopSvid(_helperpool->m_svidlist);
+Incoming.cpp (src\proxy):    NEW (CPollerUnit(TGlobal::_maxpoller), _pollerunit);
+Incoming.cpp (src\proxy):    NEW (CListener(TGlobal::_addr, TGlobal::_port, MAX_ACCEPT_COUNT), _listener);
+Incoming.cpp (src\proxy):    _webtimerlist = _timerunit->GetTimerList (TGlobal::_webtimeout);
+Incoming.cpp (src\proxy):    _helpertimerlist = _timerunit->GetTimerList (TGlobal::_helpertimeout);
+Incoming.cpp (src\proxy):    if (_listener->Attach (_pollerunit, _webtimerlist, _helpertimerlist, TGlobal::_backlog) < 0)
+Incoming.cpp (src\proxy):		TGlobal::split_str(strCmds.c_str(), ",", vec);
+Incoming.cpp (src\proxy):    while(!(*(TGlobal::_module_close)))
+Proxy_module.cpp (src\proxy):	 TGlobal::DaemonStart();
+Proxy_module.cpp (src\proxy):    if(TGlobal::DaemonInit("../conf/config.xml") < 0)
+Proxy_module.cpp (src\proxy):	TGlobal::_port = atoi(argv[2]);
+Proxy_module.cpp (src\proxy):	TGlobal::_svid = atoi(argv[4]);
+Proxy_module.cpp (src\proxy):	TGlobal::_ip = strHallIp;
+Proxy_module.cpp (src\proxy):	if(TGlobal::_udpSwitch)
+Proxy_module.cpp (src\proxy):		LogFile = new Watchdog(TGlobal::_udpIp, TGlobal::_udpPort);
+Proxy_module.cpp (src\proxy):	m_pRedisServer->Connect(TGlobal::_redisIp, TGlobal::_redisPort);
+Proxy_module.cpp (src\proxy):	m_pRedisServer->SetInfo(strHallIp, TGlobal::_port, TGlobal::_svid);
+Proxy_module.cpp (src\proxy):	if(TGlobal::_port<=0 || TGlobal::_svid<=0)
+Proxy_module.cpp (src\proxy):    log_boot ("%s v%s: stopped", TGlobal::_progname, TGlobal::_version);
+Proxy_module.cpp (src\proxy):    TGlobal::_module_close = (int*)(parameter);
+Proxy_module.cpp (src\proxy):	cpm.run((void*)&(TGlobal::_stopped));
+RealTimer.cpp (src\proxy):	if(TGlobal::_udpSwitch)
+RealTimer.cpp (src\proxy):		LogFile->writeHallUserCount((int)_helperpool->m_objmap.size(), TGlobal::_ip, TGlobal::_port);
+RealTimer.cpp (src\proxy):	int nSvid = TGlobal::RandomSvid(_helperpool->m_svidlist);			//随机一个AllocId
+RealTimer.cpp (src\proxy):	outPkg.WriteInt(TGlobal::_svid);

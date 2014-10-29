@@ -17,8 +17,8 @@ public:
 
 public:
 	map<int, CHelperUnit*> 			m_helpermap;				//svid对应AllocServer
-	vector<int> 					m_svidlist;
-	map<int, CDecoderUnit*> 		m_objmap;
+	vector<int> 					m_svidlist;					// 与 m_helpermap关联
+	map<int, CDecoderUnit*> 		m_objmap;					// uid map 通过 CDecoderUnit 与 Client_unit 关联
 	vector<int> 					m_cmdlist;
 	map<int, std::vector<int> > 	m_levelmap;					//level对应svid
 	map<string, string> 			m_ipmap;					// 记录AllocServer 的ip eth0 eth1

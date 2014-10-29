@@ -302,9 +302,9 @@ int CHelperUnit::ProcessUserLoginSuccess(CDecoderUnit* pDecoder, NETInputPacket*
 		string ip = pPacket->ReadString();
 		int port = pPacket->ReadInt();
 		CGameUnit *pGameUnit = pDecoder->get_game_unit();
-		if(pGameUnit != NULL) /* 这里记录allocserver 返回的GameServer的地址? 应该是Alloc的地址? */
+		if(pGameUnit != NULL) /* 这里记录allocserver 返回的GameServer的地址 */
 		{
-			pGameUnit->addr = IpMap(ip);
+			pGameUnit->addr = IpMap(ip); //这里关联客户端与GameServer的ip
 			pGameUnit->port = port;
 			pGameUnit->tid = tid;	
 		}
